@@ -104,9 +104,9 @@ header('Content-Type: application/json');
 
 // Data sederhana (simulasi database)
 $data = [
-    ['nama' => 'Arvan', 'pekerjaan' => 'Web Developer', 'lokasi' => 'Tegal'],
-    ['nama' => 'Aji', 'pekerjaan' => 'Data Scientist', 'lokasi' => 'Baseh'],
-    ['nama' => 'Arnanda', 'pekerjaan' => 'Mobile Developer', 'lokasi' => 'Cilacap']
+    ['nama' => 'Aditya', 'pekerjaan' => 'Web Developer', 'lokasi' => 'Tegal'],
+    ['nama' => 'Afif', 'pekerjaan' => 'Data Scientist', 'lokasi' => 'Slawi'],
+    ['nama' => 'Andre', 'pekerjaan' => 'Mobile Developer', 'lokasi' => 'Cilacap']
 ];
 
 // Ubah array menjadi JSON dan tampilkan
@@ -136,14 +136,15 @@ Bagian penting dari kode tersebut meliputi:
     />
     <style>
       :root {
-        --blue-deep: #091369;
-        --blue-mid: #1079f0;
-        --blue-light: #f1fff7;
-        --blue-border: #10e8f0;
-        --blue-stat: #f8f9fa;
-        --text-dark: #333;
-        --text-muted: #666;
-      }
+  --maroon-dark: #2b0808;
+  --maroon-deep: #4a0d14;
+  --maroon-mid: #7b1221;
+  --maroon-light: #b71c2d;
+  --maroon-soft: #fff5f5;
+
+  --text-dark: #2d2d2d;
+  --text-muted: #666;
+}
 
       * {
         margin: 0;
@@ -151,33 +152,50 @@ Bagian penting dari kode tersebut meliputi:
         box-sizing: border-box;
       }
 
-      body {
-        font-family: "DM Sans", sans-serif;
-        background-color: var(--blue-border);
-        margin: 0;
-        padding: 20px;
-        color: var(--text-dark);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+     body {
+  font-family: "DM Sans", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #2b0808 0%,
+    #4a0d14 35%,
+    #7b1221 70%,
+    #b71c2d 100%
+  );
+
+  margin: 0;
+  padding: 20px;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
       .container {
-        max-width: 560px;
-        width: 100%;
-        background: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-      }
+  max-width: 560px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px rgba(43, 8, 8, 0.35),
+    0 0 30px rgba(183, 28, 45, 0.15);
+}
 
       .header {
-        background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
-        color: white;
-        padding: 22px;
-        text-align: center;
-      }
+  background: linear-gradient(
+    135deg,
+    var(--maroon-dark),
+    var(--maroon-deep),
+    var(--maroon-mid),
+    var(--maroon-light)
+  );
+
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
 
       .header h1 {
         margin: 0;
@@ -197,28 +215,40 @@ Bagian penting dari kode tersebut meliputi:
       }
 
       .btn {
-        display: block;
-        width: 100%;
-        padding: 13px;
-        background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
-        color: #fff;
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition:
-          opacity 0.2s,
-          transform 0.15s;
-        box-shadow: 0 2px 8px rgba(0, 86, 179, 0.2);
-        position: relative;
-      }
+  display: block;
+  width: 100%;
+  padding: 14px;
 
+  background: linear-gradient(
+    135deg,
+    var(--maroon-dark),
+    var(--maroon-deep),
+    var(--maroon-light)
+  );
+
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+
+  box-shadow:
+    0 6px 18px rgba(74, 13, 20, 0.35);
+
+  position: relative;
+}
       .btn:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
-      }
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
 
       .btn:active {
         transform: translateY(0);
@@ -302,8 +332,12 @@ Bagian penting dari kode tersebut meliputi:
       }
 
       .profil-item:hover {
-        background-color: var(--blue-light);
-      }
+  background: linear-gradient(
+    90deg,
+    rgba(183, 28, 45, 0.08),
+    rgba(123, 18, 33, 0.03)
+  );
+}
 
       @keyframes fadeUp {
         to {
@@ -313,16 +347,25 @@ Bagian penting dari kode tersebut meliputi:
       }
 
       .avatar {
-        width: 44px;
-        height: 44px;
-        border-radius: 5px;
-        background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
+  width: 44px;
+  height: 44px;
 
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    var(--maroon-dark),
+    var(--maroon-light)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  box-shadow:
+    0 4px 12px rgba(123, 18, 33, 0.3);
+}
       .avatar svg {
         width: 22px;
         height: 22px;
@@ -356,22 +399,31 @@ Bagian penting dari kode tersebut meliputi:
       }
 
       .meta-item svg {
-        width: 13px;
-        height: 13px;
-        color: var(--blue-deep);
-        flex-shrink: 0;
-        opacity: 0.6;
-      }
+  width: 13px;
+  height: 13px;
+  color: var(--maroon-mid);
+  flex-shrink: 0;
+  opacity: 0.9;
+}
 
       .error-msg {
-        color: #721c24;
-        font-size: 13px;
-        line-height: 1.6;
-        padding: 14px 16px;
-        border-radius: 5px;
-        background: #f8d7da;
-        border: 1px solid #f5c6cb;
-      }
+  color: #7a0916;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  padding: 14px 16px;
+
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #ffd8dc,
+    #fff0f2
+  );
+
+  border: 1px solid #b71c2d;
+}
 
       @media (max-width: 480px) {
         body {
@@ -389,6 +441,16 @@ Bagian penting dari kode tersebut meliputi:
         .header h1 {
           font-size: 18px;
         }
+
+        .header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 20px rgba(255,255,255,0.15);
+}
 
         .profil-meta {
           gap: 10px;
@@ -521,6 +583,7 @@ Bagian penting dari kode tersebut meliputi:
   </body>
 </html>
 
+
 ```
 
 Bagian penting dari kode tersebut meliputi:
@@ -547,19 +610,19 @@ Berikut adalah tampilan output dari Tugas Modul 10.
 
 **Tampilan Awal (Sebelum Klik Tombol):**
 
-![Tampilan Profil](images/foto1.png)
+![Tampilan Profil](images/Photo1.png)
 
 Halaman menampilkan judul "Tugas Modul 10", deskripsi "Mengambil data dari server dengan AJAX", tombol biru "Tampilkan Profil", dan teks placeholder "Belum ada data. Klik tombol di atas."
 
 **Tampilan Setelah Klik Tombol (Data Berhasil Dimuat):**
 
-![Tampilan Profil](images/foto2.png)
+![Tampilan Profil](images/Photo2.png)
 
 Setelah tombol diklik, halaman tidak _reload_ sama sekali. Data diambil dari server via AJAX dan ditampilkan dalam bentuk 3 kartu profil dengan animasi _fade-up_ bertahap.
 
 **Tampilan Error (Jika Server Tidak Ditemukan):**
 
-![Tampilan Profil](images/foto3.png)
+![Tampilan Profil](images/Photo3.png)
 
 Jika file `server-modul10.php` tidak ditemukan atau server error, ditampilkan pesan error berwarna merah dengan penjelasan solusi: "Gagal mengambil data. Pastikan file data.php ada di folder yang sama dan halaman dibuka melalui server lokal."
 
